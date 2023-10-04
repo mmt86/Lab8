@@ -44,10 +44,10 @@
 	</div>
   <script>
   // You'll be inserting your JS code to initialize your map here
-  mapboxgl.accessToken = 'YOUR-MAPBOX-TOKEN';
+  mapboxgl.accessToken = 'pk.eyJ1IjoibW10ODYiLCJhIjoiY2xuMXVkazRrMDF0aTJqbXc1dWxnemFndiJ9.-Cn6UqEvKLq5Ybw1SQ6-OQ';
   const map = new mapboxgl.Map({
     container: 'map', // container id
-    style: 'mapbox://styles/iamwfx/cl9519asg003414pl56w7ov95', // replace this with your style URL
+    style: 'mapbox://styles/mmt86/cln36p98s06gu01p7ect7bnqp', // replace this with your style URL
     center: [-73.935242, 40.730610], // The convention for coordinates is  typically [long, lat]
     zoom: 13,
     // maxZoom: 22,
@@ -58,12 +58,12 @@
     // Give your layer's source a nickname you'll remember easily.
     map.addSource('sandyLayer',{
       'type':'vector',
-      'url': 'mapbox://iamwfx.bpjzmy2b'
+      'url': 'mapbox://mmt86.3fr4wvl3'
     });
 
     map.addSource('nychaLayer',{
       'type':'vector',
-      'url': 'mapbox://iamwfx.28ut4nij'
+      'url': 'mapbox://mmt86.1idxzcl4'
     });
 
     // add a new layer with your polygons
