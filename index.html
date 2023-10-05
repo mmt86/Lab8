@@ -66,13 +66,18 @@
       'url': 'mapbox://mmt86.1idxzcl4'
     });
 
+    map.addSource('censusLayer',{
+   'type':'vector',
+   'url': 'mapbox://iamwfx.6nowkujs'
+ });
+
     // add a new layer with your polygons
 
     map.addLayer({
       'id':'nychaBuildings',
       'type':'fill',
       'source':'nychaLayer',
-      'source-layer':'Map_of_NYCHA_Developments-7i6vok',
+      'source-layer':'Map_of_NYCHA_Developments-6x4iwl',
       'paint':{
         'fill-color':'red',
         'fill-opacity': 0.5
@@ -83,12 +88,22 @@
       'id':'floodZones',
       'type':'fill',
       'source':'sandyLayer',
-      'source-layer':'Sandy_Inundation_Zone-4qcajo',
+      'source-layer':'Sandy_Inundation_Zone-3x27xp',
       'paint':{
         'fill-color':'#00158f',
         'fill-opacity': 0.5
       }
-    });
+    })
+    map.addLayer({
+   'id':'povertyLevel',
+   'type':'fill',
+   'source':'censusLayer',
+   'source-layer':'nyc_blck_grp_2020_wcensus_dro-4db43i',
+   'paint':{
+     'fill-color':'green',
+     'fill-opacity': 0.5
+   }
+ });
   });
   // Within a script, you comment using two backslashes.
   </script>
