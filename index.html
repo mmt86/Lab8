@@ -74,13 +74,19 @@
     // add a new layer with your polygons
 
     map.addLayer({
-      'id':'nychaBuildings',
-      'type':'fill',
-      'source':'nychaLayer',
-      'source-layer':'Map_of_NYCHA_Developments-6x4iwl',
-      'paint':{
-        'fill-color':'red',
-        'fill-opacity': 0.5
+   'id':'povertyLevel',
+   'type':'fill',
+   'source':'censusLayer',
+   'source-layer':'nyc_blck_grp_2020_wcensus_dro-4db43i',
+   'paint':{
+     'fill-color':'['interpolate',
+    ['linear'],
+    ['get','AMR5E002'],
+    1,'white',
+    915,'#006125'
+]',
+     'fill-opacity': 0.5
+
       }
     })
 
@@ -95,15 +101,21 @@
       }
     })
     map.addLayer({
-   'id':'povertyLevel',
-   'type':'fill',
-   'source':'censusLayer',
-   'source-layer':'nyc_blck_grp_2020_wcensus_dro-4db43i',
-   'paint':{
-     'fill-color':'green',
-     'fill-opacity': 0.5
+      'id':'nychaBuildings',
+      'type':'fill',
+      'source':'nychaLayer',
+      'source-layer':'Map_of_NYCHA_Developments-6x4iwl',
+      'paint':{
+        'fill-color':'red',
+        'fill-opacity': 0.5
    }
  });
+ ["interpolate",
+     interpolation: ["linear"] | ["exponential", base] | ["cubic-bezier", x1, y1, x2, y2],
+     input: number,
+     stop_input_1: number, stop_output_1: OutputType,
+     stop_input_n: number, stop_output_n: OutputType, ...
+ ]: OutputType (number, array<number>, or Color)
   });
   // Within a script, you comment using two backslashes.
   </script>
