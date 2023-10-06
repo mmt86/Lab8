@@ -55,27 +55,27 @@
     </label>
     <label class='check-container'>
         2020 predicted floodplains (1 in 100 year flood)
-        <input id='2020predictedFlood100Layer' type='checkbox' name='viz-toggle' checked='checked'>
+        <input id='2020100' type='checkbox' name='viz-toggle' checked='checked'>
       </label>
       <label class='check-container'>
       2020 predicted floodplains (1 in 500 year flood)
-      <input id='2020predictedFlood500Layer' type='checkbox' name='viz-toggle' checked='checked'>
+      <input id='2020500' type='checkbox' name='viz-toggle' checked='checked'>
       </label>
       <label class='check-container'>
       2050 predicted floodplains (1 in 100 year flood)
-      <input id='2050predictedFlood100Layer' type='checkbox' name='viz-toggle' checked='checked'>
+      <input id='2050100' type='checkbox' name='viz-toggle' checked='checked'>
     </label>
     <label class='check-container'>
       2050 predicted floodplains (1 in 500 year flood)
-      <input id='2050predictedFlood500Layer' type='checkbox' name='viz-toggle' checked='checked'>
+      <input id='2050500' type='checkbox' name='viz-toggle' checked='checked'>
         </label>
     <label class='check-container'>
         2100 predicted floodplains (1 in 100 year flood)
-      <input id='2100predictedFlood100Layer' type='checkbox' name='viz-toggle' checked='checked'>
+      <input id='2100100' type='checkbox' name='viz-toggle' checked='checked'>
       </label>
         <label class='check-container'>
       2100 predicted floodplains (1 in 500 year flood)
-        <input id='2100predictedFlood500Layer' type='checkbox' name='viz-toggle' checked='checked'>
+        <input id='2100500' type='checkbox' name='viz-toggle' checked='checked'>
   </label>
   </div>
   </div>
@@ -110,32 +110,32 @@
    'url': 'mapbox://iamwfx.6nowkujs'
  });
 
- map.addSource('2020predictedFlood100Layer',{
+ map.addSource('2020100Layer',{
    'type':'vector',
    'url': 'mapbox://iamwfx.bbchggzx'
  });
 
- map.addSource('2020predictedFlood500Layer',{
+ map.addSource('2020500Layer',{
    'type':'vector',
    'url': 'mapbox://iamwfx.05ogder8'
  });
 
- map.addSource('2050predictedFlood100Layer',{
+ map.addSource('2050100Layer',{
    'type':'vector',
    'url': 'mapbox://iamwfx.crrx4301'
  });
 
- map.addSource('2050predictedFlood500Layer',{
+ map.addSource('2050500Layer',{
    'type':'vector',
    'url': 'mapbox://iamwfx.4ydk0450'
  });
 
- map.addSource('2100predictedFlood100Layer',{
+ map.addSource('2100100Layer',{
    'type':'vector',
    'url': 'mapbox://iamwfx.dxjuiivg'
  });
 
- map.addSource('2100predictedFlood500Layer',{
+ map.addSource('2100500Layer',{
    'type':'vector',
    'url': 'mapbox://iamwfx.8thgevrt'
  });
@@ -185,9 +185,9 @@
     })
 
  map.addLayer({
-   'id':'2020predictedFlood100Layer',
+   'id':'2020100',
    'type':'fill',
-   'source':'2020predictedFlood100Layer',
+   'source':'2020100Layer',
    'source-layer':'FutureFloodplains_2020_100yr-du18hr',
    'paint':{
      'fill-color':'#FF0000',
@@ -196,9 +196,9 @@
    })
 
 map.addLayer({
-  'id':'2020predictedFlood500Layer',
+  'id':'2020500',
   'type':'fill',
-  'source':'2020predictedFlood500Layer',
+  'source':'2020500Layer',
   'source-layer':'FutureFloodplains_2020_500yr-0x77x0',
   'paint':{
     'fill-color':'#7E0101',
@@ -207,9 +207,9 @@ map.addLayer({
     })
 
 map.addLayer({
-  'id':'2050predictedFlood100Layer',
+  'id':'2050100',
   'type':'fill',
-  'source':'2050predictedFlood100Layer',
+  'source':'2050100Layer',
   'source-layer':'FutureFloodplains_2050_100yr-6nepei',
   'paint':{
     'fill-color':'#0BFF00',
@@ -218,9 +218,9 @@ map.addLayer({
     })
 
 map.addLayer({
-  'id':'2050predictedFlood500Layer',
+  'id':'2050500',
   'type':'fill',
-  'source':'2050predictedFlood500Layer',
+  'source':'2050500Layer',
   'source-layer':'FutureFloodplains_2050_500yr-a4444h',
   'paint':{
     'fill-color':'#087A03',
@@ -229,9 +229,9 @@ map.addLayer({
     })
 
 map.addLayer({
-  'id':'2100predictedFlood100Layer',
+  'id':'2100100',
   'type':'fill',
-  'source':'2100predictedFlood100Layer',
+  'source':'2100100Layer',
   'source-layer':'FutureFloodplains_2100_100yr-cqwfrw',
   'paint':{
     'fill-color':'#FF00DB',
@@ -240,9 +240,9 @@ map.addLayer({
     })
 
 map.addLayer({
-  'id':'2100predictedFlood500Layer',
+  'id':'2100500',
   'type':'fill',
-  'source':'2100predictedFlood500Layer',
+  'source':'2100500Layer',
   'source-layer':'FutureFloodplains_2100_500yr-27ghpw',
   'paint':{
     'fill-color':'#80026E',
@@ -253,15 +253,12 @@ map.addLayer({
 map.setLayoutProperty('floodZones',"visibility", "visible");
 map.setLayoutProperty('povertyLevel',"visibility", "visible");
 map.setLayoutProperty('nychaBuildings',"visibility", "visible");
-map.setLayoutProperty('2020predictedFlood100Layer',"visibility", "visible");
-map.setLayoutProperty('2020predictedFlood500Layer',"visibility", "visible");
-map.setLayoutProperty('2050predictedFlood100Layer',"visibility", "visible");
-map.setLayoutProperty('2050predictedFlood500Layer',"visibility", "visible");
-map.setLayoutProperty('2100predictedFlood100Layer',"visibility", "visible");
-map.setLayoutProperty('2100predictedFlood500Layer',"visibility", "visible");
-
-var layerList = document.getElementById("menu");
-var checkboxes = layerList.getElementsByTagName("input");
+map.setLayoutProperty('2020100',"visibility", "visible");
+map.setLayoutProperty('2020500',"visibility", "visible");
+map.setLayoutProperty('2050100',"visibility", "visible");
+map.setLayoutProperty('2050500',"visibility", "visible");
+map.setLayoutProperty('2100100',"visibility", "visible");
+map.setLayoutProperty('2100500',"visibility", "visible");
 var layerList = document.getElementById("menu");
 var checkboxes = layerList.getElementsByTagName("input");
 
@@ -278,19 +275,7 @@ function switchLayer(layer) {
 for (var i = 0; i < checkboxes.length; i++) {
   checkboxes[i].onclick = switchLayer;
 }
-function switchLayer(layer) {
-    var clickedLayersLabel = layer.target.id; // get the label of the layer cluster
-    var clickedLayers = eval(clickedLayersLabel); // create the variable from the label using the eval function
-    var visibility = map.getLayoutProperty(clickedLayersLabel, "visibility"); // check whether the cluster of layers is visible by checking the first entry
-    if (visibility === "visible") {
-      map.setLayoutProperty(clickedLayersLabel, "visibility", "none")
-    } else {
-      map.setLayoutProperty(clickedLayersLabel, "visibility", "visible")
-    }
-}
-for (var i = 0; i < checkboxes.length; i++) {
-  checkboxes[i].onclick = switchLayer;
-}
+
 });
   // Within a script, you comment using two backslashes.
   </script>
