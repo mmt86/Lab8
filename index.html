@@ -91,23 +91,28 @@
  map.addSource('2020predictedFlood100Layer',{
    'type':'vector',
    'url': 'mapbox://iamwfx.bbchggzx'
+ });
 
  map.addSource('2020predictedFlood500Layer',{
    'type':'vector',
    'url': 'mapbox://iamwfx.05ogder8'
  });
+
  map.addSource('2050predictedFlood100Layer',{
    'type':'vector',
    'url': 'mapbox://iamwfx.crrx4301'
  });
+
  map.addSource('2050predictedFlood500Layer',{
    'type':'vector',
    'url': 'mapbox://iamwfx.4ydk0450'
  });
+
  map.addSource('2100predictedFlood100Layer',{
    'type':'vector',
    'url': 'mapbox://iamwfx.dxjuiivg'
  });
+
  map.addSource('2100predictedFlood500Layer',{
    'type':'vector',
    'url': 'mapbox://iamwfx.8thgevrt'
@@ -141,20 +146,21 @@
       'source':'sandyLayer',
       'source-layer':'Sandy_Inundation_Zone-3x27xp',
       'paint':{
-        'fill-color':'00F9FF',
+        'fill-color':'#00F9FF',
         'fill-opacity': 0.5
       }
     })
+
     map.addLayer({
       'id':'nychaBuildings',
       'type':'fill',
       'source':'nychaLayer',
       'source-layer':'Map_of_NYCHA_Developments-6x4iwl',
       'paint':{
-        'fill-color':'1D104E',
+        'fill-color':'#0022FF',
         'fill-opacity': 0.5
-   }
- })
+      }
+    })
 
  map.addLayer({
    'id':'2020predictedFlood100Layer',
@@ -162,64 +168,76 @@
    'source':'2020predictedFlood100Layer',
    'source-layer':'FutureFloodplains_2020_100yr-du18hr',
    'paint':{
-     'fill-color':'FF0000',
-     'fill-opacity': 0.5
-}
-})
+     'fill-color':'#FF0000',
+     'fill-opacity': 0.3
+     }
+   })
+
 map.addLayer({
   'id':'2020predictedFlood500Layer',
   'type':'fill',
   'source':'2020predictedFlood500Layer',
   'source-layer':'FutureFloodplains_2020_500yr-0x77x0',
   'paint':{
-    'fill-color':'7E0101',
-    'fill-opacity': 0.5
-}
-})
+    'fill-color':'#7E0101',
+    'fill-opacity': 0.3
+      }
+    })
+
 map.addLayer({
   'id':'2050predictedFlood100Layer',
   'type':'fill',
   'source':'2050predictedFlood100Layer',
   'source-layer':'FutureFloodplains_2050_100yr-6nepei',
   'paint':{
-    'fill-color':'FF6F6F',
-    'fill-opacity': 0.5
-}
-})
+    'fill-color':'#0BFF00',
+    'fill-opacity': 0.3
+      }
+    })
+
 map.addLayer({
   'id':'2050predictedFlood500Layer',
   'type':'fill',
   'source':'2050predictedFlood500Layer',
   'source-layer':'FutureFloodplains_2050_500yr-a4444h',
   'paint':{
-    'fill-color':'773838',
-    'fill-opacity': 0.5
-}
-})
+    'fill-color':'#087A03',
+    'fill-opacity': 0.3
+      }
+    })
+
 map.addLayer({
   'id':'2100predictedFlood100Layer',
   'type':'fill',
   'source':'2100predictedFlood100Layer',
   'source-layer':'FutureFloodplains_2100_100yr-cqwfrw',
   'paint':{
-    'fill-color':'FCC3C3',
-    'fill-opacity': 0.5
-}
-})
+    'fill-color':'#FF00DB',
+    'fill-opacity': 0.3
+      }
+    })
+
 map.addLayer({
   'id':'2100predictedFlood500Layer',
   'type':'fill',
   'source':'2100predictedFlood500Layer',
   'source-layer':'FutureFloodplains_2100_500yr-27ghpw',
   'paint':{
-    'fill-color':'7D4949',
-    'fill-opacity': 0.5
-}
-});
+    'fill-color':'#80026E',
+    'fill-opacity': 0.3
+    }
+  });
 
  map.setLayoutProperty('floodZones',"visibility", "visible");
 map.setLayoutProperty('povertyLevel',"visibility", "visible");
 map.setLayoutProperty('nychaBuildings',"visibility", "visible");
+map.setLayoutProperty('2020predictedFlood100Layer',"visibility", "visible");
+map.setLayoutProperty('2020predictedFlood500Layer',"visibility", "visible");
+map.setLayoutProperty('2050predictedFlood100Layer',"visibility", "visible");
+map.setLayoutProperty('2050predictedFlood500Layer',"visibility", "visible");
+map.setLayoutProperty('2100predictedFlood100Layer',"visibility", "visible");
+map.setLayoutProperty('2100predictedFlood500Layer',"visibility", "visible");
+
 var layerList = document.getElementById("menu");
 var checkboxes = layerList.getElementsByTagName("input");
 function switchLayer(layer) {
